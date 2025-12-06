@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瓦猫历史馆</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="background-layer">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+        </div>
+
+        <div class="scroll-container">
+            <img src="./image/juanzhou.png" alt="卷轴" class="scroll-bg">
+            <div class="scroll-content-area">
+                <div class="text-inner">
+                    <h1>瓦猫溯源</h1>
+                    
+                    <div class="scroll-img-box">
+                        <img src="./image/1.jpg" alt="清代瓦猫实物" class="scroll-img">
+                        <p class="img-desc">清代滇西民居屋脊瓦猫（图源：云南民俗博物馆）</p>
+                    </div>
+
+                    <h2>一、瓦猫的起源</h2>
+                    <p>瓦猫，又称"镇脊虎"，是云南特有的民俗神兽，最早可追溯至明代洪武年间。明初汉族大规模迁入云南，将中原"镇宅瑞兽"文化与云南本土巫傩文化融合，以陶土烧制猫形图腾，置于民居屋脊正中，寓意吞邪纳福、镇宅护院。</p>
+                    <p>早期瓦猫多为青灰陶胎，造型粗犷，张口露齿，意在"吞噬一切不祥"，是西南边疆民众对抗自然灾异、邪祟的精神寄托。</p>
+
+                    <a href="https://www.ynmuseum.org/" target="_blank" class="link-btn">查看云南民俗博物馆官网</a>
+
+                    <div class="scroll-img-box">
+                        <img src="./image/2.jpg" alt="不同形制的瓦猫" class="scroll-img">
+                        <p class="img-desc">不同地域的瓦猫形制（左：大理 右：建水）</p>
+                    </div>
+
+                    <h2>二、地域与形制演变</h2>
+                    <p>明清时期，瓦猫在云南各地形成不同风格：</p>
+                    <ul class="wamao-list">
+                        <li>大理瓦猫：身形瘦长，双耳直立，多饰以彩绘</li>
+                        <li>建水瓦猫：短粗敦实，腹部浑圆，象征"聚财"</li>
+                        <li>腾冲瓦猫：融入傣族图腾元素，添有鳞甲纹路</li>
+                    </ul>
+                    <p>至民国时期，瓦猫从"镇宅神器"逐渐演变为民俗装饰，造型趋于温和，部分还会在口中嵌琉璃珠，寓意"明珠镇宅"。</p>
+
+                    <div class="wamao-video">
+                        <h3 style="color: #8B4513; font-size: 1.2rem; margin-bottom: 1rem;">瓦猫古法烧制工艺实拍</h3>
+                        <video controls poster="./image/video-cover.jpg">
+                            <source src="./image/wamao-make.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                    </div>
+
+                    <div class="scroll-img-box">
+                        <img src="./image/3.jpg" alt="现代瓦猫传承" class="scroll-img">
+                        <p class="img-desc">现代非遗匠人制作瓦猫</p>
+                    </div>
+
+                    <h2>三、当代传承</h2>
+                    <p>如今，瓦猫被列入云南非物质文化遗产，大理、建水等地的匠人仍保留古法烧制工艺。除传统屋脊摆件外，瓦猫还衍生出文创产品、茶具、饰品等形式，成为云南民俗文化的标志性符号。</p>
+                    <p>其"镇邪纳福"的核心寓意未变，仍是西南民众对平安、富足生活的美好祈愿。</p>
+
+                    <div class="wamao-form">
+                        <h3 style="color: #8B4513; font-size: 1.5rem; margin-bottom: 2rem; text-align: center;">瓦猫文化调研问卷</h3>
+                        <div class="form-item">
+                            <label for="name">您的姓名：</label>
+                            <input type="text" id="name" name="name" placeholder="请输入姓名" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="phone">联系电话：</label>
+                            <input type="tel" id="phone" name="phone" placeholder="请输入手机号" pattern="^1[3-9]\d{9}$" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="comment">您对瓦猫文化的看法：</label>
+                            <textarea id="comment" name="comment" rows="5" placeholder="请输入您的看法"></textarea>
+                        </div>
+                        <button type="submit" class="form-btn" onclick="validateForm()">提交问卷</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="foreground-layer">
+            <img src="./image/roof.png" class="static-element roof" alt="屋顶">
+        </div>
+
+        <img src="./image/wamao.png" class="wamao-alone" alt="瓦猫">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

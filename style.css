@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #a3c0da;
+    overflow: hidden; 
+    font-family: "KaiTi", "楷体", serif;
+    animation: bgGradient 20s infinite alternate;
+}
+
+@keyframes bgGradient {
+    0% { background-color: #a3c0da; }
+    50% { background-color: #b8d1e8; }
+    100% { background-color: #94b8d6; }
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;      
+    padding: 0;      
+}
+
+.scroll-container {
+    position: relative;
+    width: 95%;      
+    max-width: 1000px; 
+    height: 90vh;    
+    display: flex;
+    justify-content: center;
+    z-index: 21;
+    transition: all 0.3s ease;
+}
+
+.scroll-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(139, 69, 19, 0.2);
+}
+
+.scroll-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.scroll-content-area {
+    position: absolute;
+    z-index: 2;
+    top: 20%;    
+    bottom: 15%; 
+    left: 18%;   
+    right: 15%;  
+    overflow-y: auto; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.scroll-content-area::-webkit-scrollbar {
+    display: none;
+}
+
+.text-inner {
+    color: #4a3b2a; 
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.wamao-list {
+    margin: 2rem 0;
+    padding-left: 2rem;
+}
+.wamao-list li {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: #5a4535;
+}
+
+.scroll-img-box {
+    margin: 2rem 0; 
+    text-align: center; 
+}
+
+.scroll-img {
+    width: 100%; 
+    max-width: 350px; 
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 3px 8px rgba(74, 59, 42, 0.2); 
+    border: 2px solid #8B4513;
+    padding: 5px;
+    background-color: #f8f5f0;
+    transition: transform 0.3s ease;
+}
+.scroll-img:hover {
+    transform: scale(1.05);
+}
+
+.img-desc {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: #6b5340;
+    line-height: 1.5;
+}
+
+.text-inner h2 {
+    color: #8B4513; 
+    margin: 1.5rem 0 0.8rem 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+    border-bottom: 1px dashed #4a3b2a; 
+    padding-bottom: 0.3rem;
+}
+
+.text-inner p {
+    margin-bottom: 1rem;
+}
+
+.text-inner h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #8B4513;
+    font-weight: normal;
+    font-size: 1.8rem;
+}
+
+.link-btn {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.8rem 1.5rem;
+    background-color: #8B4513;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.link-btn:hover {
+    background-color: #a0522d;
+}
+
+/* 基础表单样式 - 移动端 */
+.wamao-form {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: rgba(248, 245, 240, 0.9);
+    border-radius: 10px;
+    border: 2px solid #8B4513;
+}
+.form-item {
+    margin: 1.5rem 0; /* 增加间距 */
+}
+.form-item label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #8B4513;
+    font-weight: bold;
+    font-size: 1.2rem; /* 移动端标签也放大 */
+}
+.form-item input, .form-item textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "KaiTi", "楷体", serif;
+    font-size: 1.1rem; /* 移动端输入框字体 */
+}
+.form-btn {
+    padding: 1rem 2rem;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "KaiTi", "楷体", serif;
+    font-size: 1.2rem; /* 移动端按钮字体 */
+}
+
+.wamao-video {
+    margin: 2rem 0;
+    text-align: center;
+}
+.wamao-video video {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    border: 2px solid #8B4513;
+}
+
+.foreground-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 20; 
+}
+
+.static-element {
+    position: absolute;
+}
+
+.roof {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+/* 瓦猫样式 */
+.wamao-alone {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    bottom: 55px; 
+    right: 10%;   
+    z-index: 22;
+    pointer-events: none;
+    animation: wamaoShake 5s infinite alternate;
+}
+
+@keyframes wamaoShake {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(-2deg); }
+}
+
+/* 云朵样式  */
+.cloud {
+    position: absolute;
+    background: #fff;
+    border-radius: 50px;
+    opacity: 0.7;
+    z-index: 0;
+    /* 确保动画优先级 */
+    animation: cloudMove linear infinite !important;
+}
+/* 第一朵云：左→右，20秒 */
+.cloud-1 {
+    width: 100px;
+    height: 40px;
+    top: 20%;
+    left: -150px; /* 初始在左侧屏幕外 */
+    animation-name: cloudMove1 !important;
+    animation-duration: 20s !important;
+}
+/* 第二朵云：右→左，25秒 */
+.cloud-2 {
+    width: 120px;
+    height: 50px;
+    top: 50%;
+    right: -180px; /* 初始在右侧屏幕外 */
+    animation-name: cloudMove2 !important;
+    animation-duration: 25s !important;
+}
+
+/* 云朵动画1：左→右 */
+@keyframes cloudMove1 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+/* 云朵动画2：右→左 */
+@keyframes cloudMove2 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100vw - 200px)); }
+}
+
+/* PC端样式 */
+@media screen and (min-width: 1024px) {
+    .scroll-container {
+        width: 90vw;
+        height: 98vh; 
+        max-width: none;
+    }
+
+    .wamao-alone {
+        width: 900px;
+        bottom: 20px;
+        right: 15%;
+        z-index: 30;
+        animation: wamaoShake 4s infinite alternate;
+    }
+
+    .roof {
+        height: 35vh; 
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .text-inner {
+        font-size: 3rem; 
+        line-height: 2;
+        padding: 0 4rem 4rem 4rem; 
+    }
+    
+    .text-inner h1 { 
+        font-size: 7rem; 
+        margin-bottom: 4rem; 
+    }
+    
+    .text-inner h2 { 
+        font-size: 5rem; 
+        margin-top: 3rem; 
+        border-bottom: 4px dashed #8B4513; 
+    }
+    
+    .img-desc { 
+        font-size: 1.6rem; 
+    }
+
+    .wamao-list li {
+        font-size: 2.5rem;
+    }
+
+    /* PC端问卷样式 */
+    .wamao-form {
+        padding: 4rem; /* 增加内边距 */
+        margin: 4rem 0;
+    }
+    .wamao-form h3 {
+        font-size: 3.5rem !important; /* 问卷标题放大 */
+        margin-bottom: 3rem !important;
+    }
+    .form-item {
+        margin: 2.5rem 0; /* 增加表单项间距 */
+    }
+    .form-item label {
+        font-size: 3rem; /* 标签字体放大 */
+        margin-bottom: 1.2rem;
+    }
+    .form-item input, .form-item textarea {
+        font-size: 2.5rem; /* 输入框字体放大 */
+        padding: 1.5rem; /* 增加输入框内边距 */
+        border-radius: 8px;
+    }
+    .form-btn {
+        font-size: 2.8rem; /* 按钮字体放大 */
+        padding: 1.5rem 4rem; /* 按钮放大 */
+        border-radius: 8px;
+    }
+    
+    .scroll-img { 
+        width: 95%; 
+        max-width: 1200px; 
+    }
+
+    .wamao-video video {
+        max-width: 1200px;
+    }
+
+    .scroll-content-area::-webkit-scrollbar {
+        display: block;
+        width: 18px;
+    }
+    .scroll-content-area::-webkit-scrollbar-thumb {
+        background: #8B4513;
+        border-radius: 9px;
+    }
+    
+    /* PC端云朵放大 */
+    .cloud-1 { width: 300px; height: 120px; }
+    .cloud-2 { width: 350px; height: 140px; }
+}
